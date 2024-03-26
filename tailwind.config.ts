@@ -10,10 +10,15 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-conic":
-					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+			colors: {
+				primary: "#f1cf46",
+				secondary: "#2a1c13",
+				light: "#ebe08b",
+				dark: "#e38e21",
+			},
+			boxShadow: {
+				// Neo-brutalism shadow
+				card: "15px 15px 0px rgba(0, 0, 0, .8)",
 			},
 		},
 	},
