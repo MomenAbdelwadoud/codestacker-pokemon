@@ -12,13 +12,15 @@ const config: Config = {
 		extend: {
 			colors: {
 				primary: "#f1cf46",
-				secondary: "#2a1c13",
+				secondary: "#e38e21",
 				light: "#ebe08b",
-				dark: "#e38e21",
+				dark: "#5E341A",
 			},
 			boxShadow: {
 				// Neo-brutalism shadow
-				card: "15px 15px 0px rgba(0, 0, 0, .8)",
+				mainCard: "15px 15px 0px #543826",
+				pokemonCard: "7px 7px 0px #f1cf46",
+				badge: "3px 3px 0px #e38e21",
 			},
 		},
 	},

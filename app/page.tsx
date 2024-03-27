@@ -1,20 +1,22 @@
+import PokeBall from "@/public/pokeball.svg";
+import {RefreshCw} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./components/Button";
+import CardGrid from "./components/CardGrid";
 
 export default function Home() {
 	return (
-		<main className="bg-white rounded-sm border-black border-2 shadow-card flex w-full h-full py-8  px-5 md:px-20">
+		<main className="bg-white rounded-sm border-dark border-2 shadow-mainCard flex w-full h-full py-8  px-5 md:px-20 flex-col items-center justify-between">
 			<div className="flex justify-between w-full h-fit items-center">
 				<p className="text-2xl font-bold text-primary uppercase">Pokemon Get</p>
 				<div className="flex place-items-center flex-col gap-1">
 					<Image
-						src={require("../public/pokeball.svg")}
+						src={PokeBall}
 						alt="ICON"
 						height={60}
-						width={60}></Image>
-					{/* <Repeat2
-						width={20}
-						height={20}></Repeat2> */}
+						width={60}
+						className="hover:rotate-180 transition-transform"></Image>
 				</div>
 				<p className="text-sm text-gray-500">
 					Made by{" "}
@@ -25,7 +27,11 @@ export default function Home() {
 					</Link>
 				</p>
 			</div>
-			<div></div>
+			<CardGrid></CardGrid>
+			<Button
+				text="Load more"
+				icon={<RefreshCw></RefreshCw>}
+				onClick=""></Button>
 		</main>
 	);
 }

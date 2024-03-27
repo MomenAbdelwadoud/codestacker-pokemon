@@ -19,7 +19,7 @@ export default function RootLayout({
 		<html
 			lang="en"
 			className={lexend.className}>
-			<body className="bg-gradient-to-br from-primary to-dark lg:px-[10%] lg:py-[3%] h-screen flex place-items-center">
+			<body className="bg-gradient-to-br from-primary to-secondary md:px-0 lg:px-[3%] lg:py-[2%] h-screen flex place-items-center">
 				<Providers>{children}</Providers>
 			</body>
 		</html>
