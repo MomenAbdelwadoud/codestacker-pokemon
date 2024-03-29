@@ -1,9 +1,9 @@
+import PaginationContainer from "@/components/PaginationContainer";
 import PokeBall from "@/public/pokeball.svg";
 import {RefreshCw} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./components/Button";
-import CardGrid from "./components/CardGrid";
+import Button from "../components/Button";
 
 export default function Home() {
 	return (
@@ -27,7 +27,7 @@ export default function Home() {
 					</Link>
 				</p>
 			</div>
-			<CardGrid></CardGrid>
+			<PaginationContainer></PaginationContainer>
 			<Button
 				text="Load more"
 				icon={<RefreshCw></RefreshCw>}
