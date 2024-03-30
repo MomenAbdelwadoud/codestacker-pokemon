@@ -6,7 +6,7 @@ const LoadBtn = ({onClick}: {onClick: any}) => {
 	return (
 		<>
 			<Button
-				text="Load more"
+				text="Show more"
 				icon={<RefreshCw></RefreshCw>}
 				onClick={onClick}></Button>
 		</>

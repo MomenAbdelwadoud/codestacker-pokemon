@@ -2,8 +2,9 @@
 import {getPokemonCardList} from "@/utils/pokemons.service";
 import {PokemonCardProps} from "@/utils/types";
 import {useEffect, useState} from "react";
+import BackBtn from "./Buttons/BackBtn";
+import LoadBtn from "./Buttons/LoadBtn";
 import CardGrid from "./CardGrid";
-import LoadBtn from "./LoadBtn";
 import SpinnerComponent from "./Spinner";
 
 const PaginationContainer = () => {
@@ -37,7 +38,12 @@ const PaginationContainer = () => {
 				<CardGrid pokemonList={pokemonCardList!}></CardGrid>
 			)}
 
-			<LoadBtn onClick={() => setCurrPage(currPage + 1)}></LoadBtn>
+			<div className="flex gap-2 items-center justify-center">
+				<BackBtn
+					onClick={() => setCurrPage(currPage - 1)}
+					disabled={currPage === 0}></BackBtn>
+				<LoadBtn onClick={() => setCurrPage(currPage + 1)}></LoadBtn>
+			</div>
 		</div>
 	);
 };
