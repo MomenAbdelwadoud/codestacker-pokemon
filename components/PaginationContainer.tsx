@@ -1,12 +1,16 @@
 import {getPokemonCardList} from "@/utils/pokemons.service";
+import {Suspense} from "react";
 import CardGrid from "./CardGrid";
+import SpinnerComponent from "./Spinner";
 
 const PaginationContainer = async () => {
 	const pokemonCardList = await getPokemonCardList(10);
 
 	return (
 		<div>
-			<CardGrid pokemonList={pokemonCardList}></CardGrid>
+			<Suspense fallback={<SpinnerComponent></SpinnerComponent>}>
+				<CardGrid pokemonList={pokemonCardList}></CardGrid>
+			</Suspense>
 		</div>
 	);
 };

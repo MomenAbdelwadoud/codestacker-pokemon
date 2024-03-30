@@ -35,6 +35,7 @@ const PokemonCard = (props: PokemonCardProps) => {
 							</div>
 							<div>{props.height}</div>
 						</div>
+
 						<div className="flex gap-4 items-center">
 							<div className="shadow-badge border-1 border-secondary p-1">
 								<Weight className="text-secondary w-4 h-4"></Weight>
