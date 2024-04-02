@@ -8,3 +8,18 @@ export interface PokemonCardProps {
 	sprite: string;
 	order: number;
 }
+
+export type StatName =
+	| "hp"
+	| "attack"
+	| "defense"
+	| "special-attack"
+	| "special-defense"
+	| "speed";
+export interface PokemonDetailsProps extends PokemonCardProps {
+	stats: {
+		base_stat: number;
+		stat: StatName;
+	}[];
+	evolutions: string[];
+}

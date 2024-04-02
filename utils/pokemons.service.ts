@@ -1,5 +1,6 @@
+import {Pokemon} from "pokedex-promise-v2";
 import P from "./pokedex";
-import {PokemonCardProps} from "./types";
+import {PokemonCardProps, PokemonDetailsProps, StatName} from "./types";
 
 export const getPokemonCardList = async (
 	limit = 20,
@@ -24,6 +25,38 @@ export const getPokemonCardList = async (
 			} as PokemonCardProps;
 		});
 		return cardList;
+	} catch (error) {
+		throw error;
+	}
+};
+
+export const getPokemonDetails = async (
+	pokemonName: string
+): Promise<PokemonDetailsProps> => {
+	try {
+		const result = await P.getPokemonByName(pokemonName);
+		const details = (result: Pokemon) => {
+			return {
+				id: result.id,
+				name: result.name,
+				height: result.height,
+				weight: result.weight,
+				type: result.types[0].type.name,
+				abilities: result.abilities.map(ability => ability.ability.name),
+				sprite: result.sprites.front_default!,
+				order: result.order,
+				stats: result.stats.map(stat => {
+					return {
+						base_stat: stat.base_stat,
+						stat: stat.stat.name as StatName,
+					};
+				}),
+				evolutions: result.evolves_from_species
+					? [result.evolves_from_species.name]
+					: [],
+			};
+		};
+		return details(result);
 	} catch (error) {
 		throw error;
 	}

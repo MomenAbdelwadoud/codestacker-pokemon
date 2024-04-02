@@ -19,6 +19,7 @@ export default function Home() {
 				<p className="text-sm text-gray-500">
 					Made by{" "}
 					<Link
+						target="_blank"
 						href="https://github.com/MomenAbdelwadoud"
 						className="font-bold underline">
 						Momen Elkhalifa
