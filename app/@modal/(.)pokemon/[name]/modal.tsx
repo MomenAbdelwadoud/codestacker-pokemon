@@ -23,7 +23,7 @@ export default function Modal({children}: {children: React.ReactNode}) {
 		<div className="bg-[rgba(0,0,0,0.3)] top-0 left-0 right-0 bottom-0 absolute z-50 flex place-content-center">
 			<dialog
 				ref={dialogRef}
-				className="w-1/3 h-2/3 bg-white flex justify-center items-center shadow-mainCard border-dark border-3 rounded-sm"
+				className="w-[40%] h-5/6 bg-white flex justify-center items-center shadow-mainCard border-dark border-3 rounded-sm pt-5"
 				onClose={onDismiss}>
 				{children}
 				<button

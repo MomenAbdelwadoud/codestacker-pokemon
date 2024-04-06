@@ -21,5 +21,4 @@ export interface PokemonDetailsProps extends PokemonCardProps {
 		base_stat: number;
 		stat: StatName;
 	}[];
-	evolutions: string[];
 }

@@ -51,9 +51,6 @@ export const getPokemonDetails = async (
 						stat: stat.stat.name as StatName,
 					};
 				}),
-				evolutions: result.evolves_from_species
-					? [result.evolves_from_species.name]
-					: [],
 			};
 		};
 		return details(result);
