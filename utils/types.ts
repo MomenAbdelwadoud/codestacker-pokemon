@@ -9,6 +9,8 @@ export interface PokemonCardProps {
 	order: number;
 }
 
+export type PokemonEvos = string[];
+
 export type StatName =
 	| "hp"
 	| "attack"

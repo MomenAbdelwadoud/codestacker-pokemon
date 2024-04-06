@@ -1,11 +1,13 @@
-import {getPokemonDetails} from "@/utils/pokemons.service";
+import {getPokemonDetails, getPokemonEvos} from "@/utils/pokemons.service";
 import {Card, CardBody, CardHeader} from "@nextui-org/card";
 import {ListOrdered, Ruler, Weight} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import DetailsModal from "./modal";
 
 export default async function PokemonDetails({params: {name}}: {params: {name: string}}) {
 	const result = await getPokemonDetails(name);
+	const evolutions = await getPokemonEvos(name);
 	return (
 		<DetailsModal>
 			<Card className="w-full h-full -z-10 bg-none shadow-none flex flex-col rounded-sm py-5 gap-6">
@@ -70,11 +72,10 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 						<p className="text-primary text-xl font-semibold uppercase ">
 							SKILLS
 						</p>
-
 						<ol>
-							{result.abilities.map(ability => (
+							{result.abilities.map((ability, index) => (
 								<li
-									key={ability}
+									key={index}
 									className="text-dark uppercase text-base">
 									{ability}
 								</li>
@@ -85,15 +86,23 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 						<p className="text-primary text-xl font-semibold uppercase ">
 							EVOLUTIONS
 						</p>
-
 						<ol>
-							{/* {result.evolutions.map(evo => (
-								<li
-									key={evo}
-									className="text-dark uppercase text-base">
-									{evo}
-								</li> */
-							/* ))} */}
+							{evolutions.map((evo: string, index: number) => (
+								<Link
+									href={`/pokemon/${evo}`}
+									className={evo === name ? " cursor-default" : ""}
+									key={index}>
+									<li
+										className={
+											"text-dark uppercase text-base underline" +
+											(evo === name
+												? " font-bold no-underline"
+												: "")
+										}>
+										{index + 1 + ". " + evo}
+									</li>
+								</Link>
+							))}
 						</ol>
 					</div>
 				</CardBody>

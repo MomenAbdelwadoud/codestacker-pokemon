@@ -58,3 +58,22 @@ export const getPokemonDetails = async (
 		throw error;
 	}
 };
+
+export const getPokemonEvos = async (pokemonName: string): Promise<any> => {
+	try {
+		const species = await P.getPokemonSpeciesByName(pokemonName);
+		// Get the id number from the url of the evolution chain and change it to integer
+		const evoChainNo = parseInt(species.evolution_chain.url.split("/").at(-2)!);
+		const evoChain = await P.getEvolutionChainById(evoChainNo);
+
+		const evolutions = [];
+		while (evoChain.chain?.evolves_to?.length + 1) {
+			const nextEvo = evoChain.chain.species.name;
+			evoChain.chain = evoChain.chain?.evolves_to[0];
+			evolutions.push(nextEvo);
+		}
+		return evolutions;
+	} catch (error) {
+		throw error;
+	}
+};
