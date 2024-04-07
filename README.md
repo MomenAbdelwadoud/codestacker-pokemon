@@ -1,6 +1,6 @@
 # POKEMON GET
 
-## 2024 CodeStacker FE challenge submission
+## [2024 CodeStacker](https://github.com/rihal-om/rihal-codestacker/tree/main) FE challenge submission
 
 A website that utilize https://pokeapi.co/ API to fetch 20 pokemons info on each page and you can view more details about the pokemon by clicking on it.
 All the API logic can be found in `utils/pokemons.service.ts`
@@ -29,6 +29,10 @@ All the API logic can be found in `utils/pokemons.service.ts`
 ### Live preview:
 
 ### Install using Docker
+
+1. Clone the repo.
+2. Run `docker build --pull -t pokemon-get .`
+3. Run `docker run -d -p 3000:3000 pokemon-get`
 
 ### Install and run manually
 
