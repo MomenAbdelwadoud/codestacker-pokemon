@@ -3,7 +3,7 @@ import PokemonCard from "./PokemonCard";
 
 const CardGrid = ({pokemonList}: {pokemonList: PokemonCardProps[]}) => {
 	return (
-		<div className="w-full flex flex-wrap gap-y-10 gap-x-10 overflow-y-auto py-2">
+		<div className="w-full flex flex-wrap gap-y-10 gap-x-10 overflow-y-auto py-2 justify-center">
 			{pokemonList.map(pokemon => (
 				<PokemonCard
 					key={pokemon.id}

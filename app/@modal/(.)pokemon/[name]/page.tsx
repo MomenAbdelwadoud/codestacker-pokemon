@@ -10,8 +10,8 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 	const evolutions = await getPokemonEvos(name);
 	return (
 		<DetailsModal>
-			<Card className="w-full h-full -z-10 bg-none shadow-none flex flex-col rounded-sm py-5 gap-6">
-				<CardHeader className="h-1/3 flex justify-between px-10 gap-10 items-start">
+			<Card className="w-full h-full -z-10 bg-none shadow-none flex flex-col rounded-sm md:py-5 gap-6">
+				<CardHeader className="lg:h-1/3 flex justify-between px-5 lg:px-10 gap-5 lg:gap-10 items-start flex-col lg:flex-row">
 					<Image
 						alt="Pokemon Sprite"
 						src={result.sprite}
@@ -19,36 +19,38 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 						height={300}
 						className="border-2 border-primary object-cover w-1/3 shadow-pokemonCard"></Image>
 					<div className="flex justify-center flex-col flex-1 gap-3">
-						<p className="font-bold text-secondary text-xl">#{result.id}</p>
-						<h4 className="text-4xl text-primary font-bold uppercase">
+						<p className="font-bold text-secondary lg:text-xl">
+							#{result.id}
+						</p>
+						<h4 className="text-xl lg:text-4xl text-primary font-bold uppercase">
 							{result.name}
 						</h4>
-						<p className="text-primary text-xl font-semibold uppercase mb-1">
+						<p className="text-primary text-lg lg:text-xl font-semibold uppercase mb-1">
 							TYPE: {result.type}
 						</p>
-						<div className="flex gap-8">
+						<div className="flex gap-6 md:gap-8 text-sm lg:text-base">
 							<div className="flex gap-4 items-center">
 								<div className="shadow-badge border-1 border-secondary p-1">
-									<Ruler className="text-secondary w-5 h-5"></Ruler>
+									<Ruler className="text-secondary w-3 h-3 md:w-5 md:h-5"></Ruler>
 								</div>
 								<div>{result.height}</div>
 							</div>
 							<div className="flex gap-4 items-center">
 								<div className="shadow-badge border-1 border-secondary p-1">
-									<Weight className="text-secondary w-5 h-5"></Weight>
+									<Weight className="text-secondary w-3 h-3 md:w-5 md:h-5"></Weight>
 								</div>
 								<div>{result.weight}</div>
 							</div>
 							<div className="flex gap-4 items-center">
 								<div className="shadow-badge border-1 border-secondary p-1">
-									<ListOrdered className="text-secondary w-5 h-5"></ListOrdered>
+									<ListOrdered className="text-secondary w-3 h-3 md:w-5 md:h-5"></ListOrdered>
 								</div>
 								<div>{result.order}</div>
 							</div>
 						</div>
 					</div>
 				</CardHeader>
-				<CardBody className="h-2/3 text-sm text-dark py-2 flex flex-col px-10 gap-5">
+				<CardBody className="lg:h-2/3 text-sm text-dark py-2 flex flex-col px-5 lg:px-10 gap-5">
 					<div className="flex flex-col gap-2">
 						<p className="text-primary text-xl font-semibold uppercase">
 							STATS
@@ -58,10 +60,10 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 								<div
 									key={stat.base_stat}
 									className="">
-									<p className="text-secondary uppercase text-base">
+									<p className="text-secondary uppercase text-sm md:text-base">
 										{stat.stat}
 									</p>
-									<p className="text-dark uppercase text-base">
+									<p className="text-dark uppercase text-sm md:text-base">
 										{stat.base_stat}
 									</p>
 								</div>
@@ -76,7 +78,7 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 							{result.abilities.map((ability, index) => (
 								<li
 									key={index}
-									className="text-dark uppercase text-base">
+									className="text-dark uppercase text-sm md:text-base">
 									{ability}
 								</li>
 							))}
@@ -94,7 +96,7 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 									key={index}>
 									<li
 										className={
-											"text-dark uppercase text-base underline" +
+											"text-dark uppercase text-sm md:text-base underline" +
 											(evo === name
 												? " font-bold no-underline"
 												: "")
