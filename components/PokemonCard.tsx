@@ -8,16 +8,16 @@ import Link from "next/link";
 const PokemonCard = (props: PokemonCardProps) => {
 	return (
 		<Link href={`/pokemon/${props.name}`}>
-			<Card className="w-[250px] h-[300px] shadow-pokemonCard border-primary border-3 flex flex-col rounded-sm hover:-translate-y-2 cursor-pointer">
+			<Card className="w-[250px] h-[300px] shadow-pokemonCard  border-primary  border-3 flex flex-col rounded-sm hover:-translate-y-2 cursor-pointer">
 				<CardHeader className="h-1/3 p-0">
 					<Image
 						alt="Pokemon Sprite"
 						src={props.sprite}
 						width={400}
 						height={400}
-						className=" h-full border-b-2 border-primary object-cover"></Image>
+						className=" h-full border-b-2 border-primary dark:border-secondary object-cover"></Image>
 				</CardHeader>
-				<CardBody className="h-2/3 text-sm text-dark py-2 flex flex-col justify-around px-5">
+				<CardBody className="h-2/3 text-sm text-dark dark:text-light py-2 flex flex-col justify-around px-5">
 					<div className="flex justify-between items-center">
 						<div className="flex flex-col">
 							<h4 className="text-2xl text-primary font-bold uppercase">

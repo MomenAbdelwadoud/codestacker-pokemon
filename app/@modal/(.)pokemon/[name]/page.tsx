@@ -11,7 +11,7 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 	return (
 		<DetailsModal>
 			<Card className="w-full h-full -z-10 bg-none shadow-none flex flex-col rounded-sm md:py-5 gap-6">
-				<CardHeader className="lg:h-1/3 flex justify-between px-5 lg:px-10 gap-5 lg:gap-10 items-start flex-col lg:flex-row">
+				<CardHeader className="xl:h-1/3 flex justify-between px-5 xl:px-10 gap-5 xl:gap-10 items-start flex-col xl:flex-row">
 					<Image
 						alt="Pokemon Sprite"
 						src={result.sprite}
@@ -28,7 +28,7 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 						<p className="text-primary text-lg lg:text-xl font-semibold uppercase mb-1">
 							TYPE: {result.type}
 						</p>
-						<div className="flex gap-6 md:gap-8 text-sm lg:text-base">
+						<div className="flex gap-6 md:gap-8 text-sm lg:text-base text-dark dark:text-light">
 							<div className="flex gap-4 items-center">
 								<div className="shadow-badge border-1 border-secondary p-1">
 									<Ruler className="text-secondary w-3 h-3 md:w-5 md:h-5"></Ruler>
@@ -50,7 +50,7 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 						</div>
 					</div>
 				</CardHeader>
-				<CardBody className="lg:h-2/3 text-sm text-dark py-2 flex flex-col px-5 lg:px-10 gap-5">
+				<CardBody className="lg:h-2/3 text-sm text-dark dark:text-light py-2 flex flex-col px-5 lg:px-10 gap-5">
 					<div className="flex flex-col gap-2">
 						<p className="text-primary text-xl font-semibold uppercase">
 							STATS
@@ -63,7 +63,7 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 									<p className="text-secondary uppercase text-sm md:text-base">
 										{stat.stat}
 									</p>
-									<p className="text-dark uppercase text-sm md:text-base">
+									<p className="uppercase text-sm md:text-base">
 										{stat.base_stat}
 									</p>
 								</div>
@@ -78,7 +78,7 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 							{result.abilities.map((ability, index) => (
 								<li
 									key={index}
-									className="text-dark uppercase text-sm md:text-base">
+									className="uppercase text-sm md:text-base">
 									{ability}
 								</li>
 							))}
@@ -96,7 +96,7 @@ export default async function PokemonDetails({params: {name}}: {params: {name: s
 									key={index}>
 									<li
 										className={
-											"text-dark uppercase text-sm md:text-base underline" +
+											"uppercase text-sm md:text-base underline" +
 											(evo === name
 												? " font-bold no-underline"
 												: "")

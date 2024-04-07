@@ -15,6 +15,8 @@ const config: Config = {
 				secondary: "#e38e21",
 				light: "#ebe08b",
 				dark: "#5E341A",
+				background: "#ffffff",
+				bgDark: "#18181b",
 			},
 			boxShadow: {
 				// Neo-brutalism shadow
@@ -25,6 +27,12 @@ const config: Config = {
 		},
 	},
 	darkMode: "class",
-	plugins: [nextui()],
+	plugins: [
+		nextui({
+			themes: {
+				dark: {},
+			},
+		}),
+	],
 };
 export default config;
