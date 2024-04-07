@@ -26,7 +26,7 @@ All the API logic can be found in `utils/pokemons.service.ts`
 4. Request caching.
 5. Suspense boundaries.
 
-### Live preview:
+### Live preview: https://codestacker-pokemon.netlify.app/
 
 ### Install using Docker
 
